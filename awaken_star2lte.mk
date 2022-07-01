@@ -39,6 +39,9 @@ PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
+# Target Variant
+USE_GAPPS := true
+
 BUILD_FINGERPRINT := "samsung/star2ltexx/star2lte:10/QP1A.190711.020/G965FXXSHFUJ2:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
