@@ -27,17 +27,24 @@ $(call inherit-product, device/samsung/star2lte/device.mk)
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 
-## Inherit some common Pixel OS stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+## Inherit some common corvus stuff
+$(call inherit-product, vendor/corvus/config/common_full_phone.mk)
 
 ## Device identifier, this must come after all inclusions
-PRODUCT_NAME := aosp_star2lte
+PRODUCT_NAME := corvus_star2lte
 PRODUCT_DEVICE := star2lte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G965F
 PRODUCT_MANUFACTURER := samsung
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
+
+# Corvus Maintainer
+CORVUS_MAINTAINER=Mia Ryujin
+
+# Target Variant
+USE_GAPPS=true
+TARGET_INCLUDE_PIXEL_CHARGER := true
 
 BUILD_FINGERPRINT := "samsung/star2ltexx/star2lte:10/QP1A.190711.020/G965FXXSHFUJ2:user/release-keys"
 
