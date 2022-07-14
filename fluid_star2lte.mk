@@ -24,22 +24,30 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o.mk)
 $(call inherit-product, device/samsung/star2lte/device.mk)
 
 # Boot Animation
-TARGET_SCREEN_HEIGHT := 2960
-TARGET_SCREEN_WIDTH := 1440
+TARGET_BOOT_ANIMATION_RES := 1440
 
-## Inherit some common Pixel OS stuff
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+## Inherit some common Fluid stuff
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
 
 ## Device identifier, this must come after all inclusions
-PRODUCT_NAME := aosp_star2lte
+PRODUCT_NAME := fluid_star2lte
 PRODUCT_DEVICE := star2lte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G965F
 PRODUCT_MANUFACTURER := samsung
 
+# GApps
+IS_PHONE := true
+TARGET_INCLUDE_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 BUILD_FINGERPRINT := "samsung/star2ltexx/star2lte:10/QP1A.190711.020/G965FXXSHFUJ2:user/release-keys"
+
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.fluid.maintainer=Mia \
+  ro.fluid.cpu=EXY9810
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=star2ltexx \
